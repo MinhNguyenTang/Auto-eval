@@ -54,5 +54,23 @@ class manager
       return 0;
     }
   }
+
+  /**
+  * Add formateurs
+  */
+  public function add_formateurs(User $formateurs)
+  {
+    $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $request->execute($this->getmethod($formateurs));
+  }
+
+  /**
+  * Add Admin
+  */
+  public function add_administrateurs(User $administrateurs)
+  {
+    $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $request->execute($this->getmethod($administrateurs));
+  }
 }
  ?>
