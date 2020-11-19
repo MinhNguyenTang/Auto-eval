@@ -56,6 +56,20 @@ class manager
   }
 
   /**
+  * Update user's account
+  */
+  public function modify(User $user)
+  {
+    $request = $this->db_connection()->preparer('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
+    $request->execute(array(
+      'nom'=>$user->getNom(),
+      'prenom'=>$user->getPrenom(),
+      'mail'=>$user->getMail(),
+      'mdp'=>$user->getMdp()
+    ));
+  }
+
+  /**
   * Add formateurs
   */
   public function add_formateurs(User $formateurs)
