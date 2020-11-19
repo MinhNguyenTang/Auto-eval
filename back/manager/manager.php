@@ -65,7 +65,7 @@ class manager
   }
 
   /**
-  * Add Admin
+  * Add Administrateurs
   */
   public function add_administrateurs(User $administrateurs)
   {
