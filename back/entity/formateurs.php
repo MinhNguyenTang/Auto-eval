@@ -1,6 +1,6 @@
 <?php
 
-class user
+class formateurs
 {
   /**
   * @var int
