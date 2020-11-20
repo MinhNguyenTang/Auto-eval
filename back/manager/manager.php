@@ -33,6 +33,20 @@ class manager
     return $db;
   }
 
+  public function connexion(User $user)
+  {
+    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
+    $request->execute($this->getmethod($user));
+    $result = $request->fetch();
+    if($result)
+    {
+      $user = new user($result);
+      return $user;
+    }
+    else {
+      return null;
+    }
+  }
   /**
   * Sign up
   */
@@ -60,13 +74,33 @@ class manager
   */
   public function modify(User $user)
   {
-    $request = $this->db_connection()->preparer('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
+    $request = $this->db_connection()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
     $request->execute(array(
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom(),
       'mail'=>$user->getMail(),
       'mdp'=>$user->getMdp()
     ));
+  }
+  /**
+  * Updated account visibility
+  */
+  public function get_modification($user)
+  {
+    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
+    $request->execute(array(
+      'mail'=>getMail(),
+      'mdp'=>getMdp()
+    ));
+    $result = $request->fetch();
+    if($result)
+    {
+      $user = new user($result);
+      return $user;
+    }
+    else {
+      return null;
+    }
   }
 
   /**
