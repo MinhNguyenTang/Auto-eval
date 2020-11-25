@@ -54,8 +54,8 @@ class manager
   {
     $request = $this->db_connection()->prepare('SELECT nom, prenom FROM user');
     $request->execute(array(
-      'nom' => getNom(),
-      'prenom' => getPrenom()
+      'nom'=>getNom(),
+      'prenom'=>getPrenom()
     ));
     $result = $request->fetch();
     if(!$result)
