@@ -33,6 +33,9 @@ class manager
     return $db;
   }
 
+  /**
+  * Sign in
+  */
   public function connexion(User $user)
   {
     $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
@@ -46,6 +49,14 @@ class manager
     else {
       return null;
     }
+  }
+  /**
+  * If forgotten password
+  */
+  public function new_mdp(User $user)
+  {
+    $request = $this->db_conneection()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
+    $request->execute($this->getmethod($user));
   }
   /**
   * Sign up
@@ -120,5 +131,31 @@ class manager
     $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
     $request->execute($this->getmethod($administrateurs));
   }
+
+  /**
+  * Display formateurs
+  */
+  public function afficher_formateurs()
+  {
+    $request = $this->db_connection()->prepare(
+    'SELECT formateurs.id, user.nom, id_spe, specialites.nom_spe FROM formateurs INNER JOIN specialites ON specialites.id = formateurs.id_spe
+    INNER JOIN user ON user.id = formateurs.id_user');
+    $request->execute();
+    $i = 0;
+    $result = $request->fetchAll();
+    foreach($result as $key => $values)
+    {
+      $array = array();
+      foreach($values as $keys => $value) {
+        if(!is_int($keys)) {
+          $array[$keys] = array();
+        }
+      }
+      $formateurs[$i] = $array;
+      $i++;
+    }
+    return $formateurs;
+  }
+
 }
  ?>
