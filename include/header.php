@@ -40,24 +40,24 @@ Facebook: 		https://www.facebook.com/fh5co
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="/Auto-eval/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="/Auto-eval/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="/Auto-eval/css/bootstrap.css">
 
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="/Auto-eval/css/magnific-popup.css">
 
 <!-- Owl Carousel  -->
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/Auto-eval/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/Auto-eval/css/owl.theme.default.min.css">
 
 <!-- Theme style  -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/Auto-eval/css/style.css">
 
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="/Auto-eval/js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
 <script src="js/respond.min.js"></script>
@@ -70,20 +70,6 @@ Facebook: 		https://www.facebook.com/fh5co
 
 <div id="page">
 <nav class="fh5co-nav" role="navigation">
-  <div class="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 text-right">
-          <p class="num">Call: +01 123 456 7890</p>
-          <ul class="fh5co-social">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-            <li><a href="#"><i class="icon-github"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="top-menu">
     <div class="container">
       <div class="row">
@@ -97,7 +83,7 @@ Facebook: 		https://www.facebook.com/fh5co
             <li><a href="/Auto-eval/web/pricing.php">Pricing</a></li>
             <li><a href="/Auto-eval/web/blog.php">Blog</a></li>
             <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
-            <li class="btn-cta"><a href="#"><span>Login</span></a></li>
+            <li class="btn-cta"><a href="/Auto-eval/forms/sign_in.php"><span>Login</span></a></li>
             <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
           </ul>
         </div>

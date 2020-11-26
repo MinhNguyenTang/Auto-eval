@@ -1,10 +1,10 @@
-<!Doctype html>
+<!doctype html>
+<html lang="en">
 
 <?php
-include '../include/header.php';
+include "include/header.php";
  ?>
-
-<html>
+ 
 <body>
 
   <form action="../back/connexion_backend.php" method="post">
@@ -26,6 +26,10 @@ include '../include/header.php';
     </div>
   </div>
   </form>
+
+ <?php
+ include "include/footer.php";
+ ?>
 
 </body>
 </html>
