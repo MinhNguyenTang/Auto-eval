@@ -1,3 +1,5 @@
+<?php
+ ?>
 <footer id="fh5co-footer" role="contentinfo">
   <div class="container">
     <div class="row row-pb-md">
