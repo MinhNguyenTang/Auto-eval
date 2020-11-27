@@ -7,37 +7,35 @@ include '../include/header.php';
 <html>
 <body>
 
-  <form action="../back/inscription_backend.php" method="post">
-    <div class="form-group row">
-      <div class="">
-        <input type="text" class="form-control" name="nom" placeholder="Nom"  maxlength="80" required>
-    </div>
-  </div>
+  <div class="col-md-6 animate-box">
+    <form action="../back/inscription_backend.php" method="post">
+      <div class="row form-group">
+        <div class="col-md-6">
+          <input type="text" id="fname" class="form-control" placeholder="Nom" required>
+        </div>
+        <div class="col-md-6">
+          <input type="text" id="lname" class="form-control" placeholder="Prénom" required>
+        </div>
+      </div>
 
-  <div class="form-group row">
-    <div class="">
-      <input type="text" class="form-control" name="prenom" placeholder="Prénom" maxlength="80" required>
-    </div>
-  </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="email" id="email" class="form-control" placeholder="Adresse mail" required>
+        </div>
+      </div>
 
-  <div class="form-group row">
-    <div class="">
-      <input type="email" class="form-control" name="mail" placeholder="Email" required>
-    </div>
-  </div>
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="password" id="" class="form-control" placeholder="Mot de passe" required>
+        </div>
+      </div>
 
-  <div class="form-group row">
-    <div class="">
-      <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" maxlength="80" required>
-    </div>
-  </div>
+      <div class="form-group">
+        <input type="submit" value="Valider" class="btn btn-primary">
+      </div>
 
-  <div class="form-group row">
-    <div class="">
-      <input type="submit" class="form-control" value="Valider">
-    </div>
+    </form>
   </div>
-  </form>
 
 </body>
 </html>
