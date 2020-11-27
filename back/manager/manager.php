@@ -79,6 +79,18 @@ class manager
       return 0;
     }
   }
+  /**
+  *
+  */
+  public function recovery_data($id)
+  {
+    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE id:=id');
+    $request->execute(array(
+      'id' => $id
+    ));
+    $result = $request->fetch();
+    return $result;  
+  }
 
   /**
   * Update user's account
