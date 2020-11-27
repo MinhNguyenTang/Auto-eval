@@ -78,6 +78,8 @@ Facebook: 		https://www.facebook.com/fh5co
         </div>
         <div class="col-xs-11 text-right menu-1">
           <ul>
+            <?php
+            if(empty($_SESSION['user'])) { ?>
             <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
             <li><a href="/Auto-eval/web/courses.php">Courses</a></li>
             <li><a href="/Auto-eval/web/pricing.php">Pricing</a></li>
@@ -85,6 +87,19 @@ Facebook: 		https://www.facebook.com/fh5co
             <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
             <li class="btn-cta"><a href="/Auto-eval/forms/sign_in.php"><span>Login</span></a></li>
             <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+          <?php }
+          if(isset($_SESSION['user'])) { ?>
+            <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
+            <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
+            <?php if(unserialize($_SESSION['user'])->getRole_user()=="admin") { ?>
+              <li><a href="/Auto-eval/web/admin.php">Admin</a></li>
+            <?php }
+            elseif(unserialize($_SESSION['user'])->getRole_user()=="formateur") { ?>
+              <li><a href="/Auto-eval/web/formateurs.php">Mes cours</a></li>
+            <?php } ?>
+            <li><a href="/Auto-eval/web/account.php">Mon compte</a></li>
+            <li><a href="/Auto-eval/back/deconnexion_backend.php">Déconnexion</a></li>
+          <?php } ?>
           </ul>
         </div>
       </div>

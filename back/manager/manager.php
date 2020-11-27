@@ -157,7 +157,5 @@ class manager
     return $formateurs;
   }
 
-  
-
 }
  ?>
