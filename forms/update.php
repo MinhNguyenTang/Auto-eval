@@ -8,7 +8,6 @@ $data = unserialize($_SESSION['user']);
  <html>
  <body>
 
-   <div class="col-md-6 animate-box">
      <form action="../back/modification_backend.php" method="post">
        <div class="row form-group">
          <input type="hidden" value="<?php echo $_POST['id'];?>" name="id">
@@ -37,7 +36,6 @@ $data = unserialize($_SESSION['user']);
        </div>
 
      </form>
-   </div>
 
  </body>
  </html>
