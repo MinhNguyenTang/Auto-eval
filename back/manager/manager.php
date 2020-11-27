@@ -1,5 +1,9 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/formateurs.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/spe.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
+
 class manager
 {
   public function getmethod($class)
@@ -89,7 +93,7 @@ class manager
       'id' => $id
     ));
     $result = $request->fetch();
-    return $result;  
+    return $result;
   }
 
   /**
