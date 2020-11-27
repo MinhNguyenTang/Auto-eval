@@ -24,6 +24,18 @@ include "include/header.php";
        <input type="submit" value="Send Message" class="btn btn-primary">
      </div>
 
+     <div class="form-group row">
+    <div class="col-md-12">
+        <a href="/Auto-eval/forms/unknown.php">Mot de passe oublié ?</a>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-md-12">
+        <p>Pas encore inscrit ? <a href="/Auto-eval/forms/sign_up.php">S'inscrire</a></p>
+    </div>
+</div>
+
    </form>
  </div>
 
