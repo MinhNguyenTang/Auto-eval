@@ -21,7 +21,7 @@ include "include/header.php";
 
 
      <div class="form-group">
-       <input type="submit" value="Send Message" class="btn btn-primary">
+       <input type="submit" value="Valider" class="btn btn-primary">
      </div>
 
      <div class="form-group row">
