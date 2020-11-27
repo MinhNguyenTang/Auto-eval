@@ -5,7 +5,6 @@
 include "include/header.php";
  ?>
 
- <div class="col-md-6 animate-box">
    <form action="../back/connexion_backend.php" method="post">
      <div class="row form-group">
        <div class="col-md-12">
@@ -37,7 +36,6 @@ include "include/header.php";
 </div>
 
    </form>
- </div>
 
 </body>
 </html>

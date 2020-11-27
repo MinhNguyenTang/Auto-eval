@@ -7,7 +7,6 @@ include '../include/header.php';
 <html>
 <body>
 
-  <div class="col-md-6 animate-box">
     <form action="../back/inscription_backend.php" method="post">
       <div class="row form-group">
         <div class="col-md-6">
@@ -35,7 +34,6 @@ include '../include/header.php';
       </div>
 
     </form>
-  </div>
 
 </body>
 </html>
