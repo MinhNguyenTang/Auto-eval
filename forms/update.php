@@ -1,5 +1,5 @@
 <?php
-include "include/header.php";
+include "../include/header.php";
 $manager = new manager();
 $data = $manager->recovery_data(unserialize($_SESSION['user'])->getId());
 $data = unserialize($_SESSION['user']);

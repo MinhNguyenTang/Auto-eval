@@ -11,21 +11,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 <meta name="author" content="freehtml5.co" />
-
-<!--
-//////////////////////////////////////////////////////
-
-FREE HTML5 TEMPLATE
-DESIGNED & DEVELOPED by FreeHTML5.co
-
-Website: 		http://freehtml5.co/
-Email: 			info@freehtml5.co
-Twitter: 		http://twitter.com/fh5co
-Facebook: 		https://www.facebook.com/fh5co
-
-//////////////////////////////////////////////////////
- -->
-
   <!-- Facebook and Twitter integration -->
 <meta property="og:title" content=""/>
 <meta property="og:image" content=""/>
@@ -80,13 +65,9 @@ Facebook: 		https://www.facebook.com/fh5co
           <ul>
             <?php
             if(empty($_SESSION['user'])) { ?>
-            <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
-            <li><a href="/Auto-eval/web/courses.php">Courses</a></li>
-            <li><a href="/Auto-eval/web/pricing.php">Pricing</a></li>
-            <li><a href="/Auto-eval/web/blog.php">Blog</a></li>
-            <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
-            <li class="btn-cta"><a href="/Auto-eval/forms/sign_in.php"><span>Login</span></a></li>
-            <li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+            <li class="active"><a href="/Auto-eval/index.php">Accueil</a></li>
+            <li class="btn-cta"><a href="/Auto-eval/forms/sign_in.php"><span>Connexion</span></a></li>
+            <li class="btn-cta"><a href="/Auto-eval/forms/sign_up.php"><span>Inscription</span></a></li>
           <?php }
           if(isset($_SESSION['user'])) { ?>
             <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
@@ -117,7 +98,10 @@ Facebook: 		https://www.facebook.com/fh5co
           <div class="display-tc animate-box" data-animate-effect="fadeIn">
             <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
             <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-            <p><a class="btn btn-primary btn-lg btn-learn" href="#">Take A Course</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p>
+            <p>
+              <a class="btn btn-primary btn-lg btn-learn" href="/Auto-eval/forms/sign_in.php">Se connecter</a>
+              <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a>
+              </p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 <html>
 
 <?php
-include "include/header.php";
+include "../include/header.php";
  ?>
 
 	<div id="fh5co-contact">
@@ -84,7 +84,7 @@ include "include/header.php";
 	</div>
 
 <?php
-include "include/footer.php";
+include "../include/footer.php";
  ?>
 
 	</body>
