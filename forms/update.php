@@ -37,5 +37,9 @@ $data = unserialize($_SESSION['user']);
 
      </form>
 
+     <?php
+     include "../include/footer.php"; 
+     ?>
+
  </body>
  </html>
