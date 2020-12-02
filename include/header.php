@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="en">
+
 <?php session_start();
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
@@ -11,42 +14,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 <meta name="author" content="freehtml5.co" />
-  <!-- Facebook and Twitter integration -->
-<meta property="og:title" content=""/>
-<meta property="og:image" content=""/>
-<meta property="og:url" content=""/>
-<meta property="og:site_name" content=""/>
-<meta property="og:description" content=""/>
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
 
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
-<!-- Animate.css -->
 <link rel="stylesheet" href="/Auto-eval/css/animate.css">
-<!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="/Auto-eval/css/icomoon.css">
-<!-- Bootstrap  -->
 <link rel="stylesheet" href="/Auto-eval/css/bootstrap.css">
-
-<!-- Magnific Popup -->
 <link rel="stylesheet" href="/Auto-eval/css/magnific-popup.css">
-
-<!-- Owl Carousel  -->
 <link rel="stylesheet" href="/Auto-eval/css/owl.carousel.min.css">
 <link rel="stylesheet" href="/Auto-eval/css/owl.theme.default.min.css">
-
-<!-- Theme style  -->
 <link rel="stylesheet" href="/Auto-eval/css/style.css">
-
-<!-- Modernizr JS -->
 <script src="/Auto-eval/js/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<script src="js/respond.min.js"></script>
-<![endif]-->
 
 </head>
 <body>
@@ -73,10 +51,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
             <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
             <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
             <?php if(unserialize($_SESSION['user'])->getRole_user()=="admin") { ?>
-              <li><a href="/Auto-eval/web/admin.php">Admin</a></li>
+              <li><a href="/Auto-eval/web/admin.php">Espace admin</a></li>
             <?php }
             elseif(unserialize($_SESSION['user'])->getRole_user()=="formateur") { ?>
-              <li><a href="/Auto-eval/web/formateurs.php">Mes cours</a></li>
+              <li><a href="/Auto-eval/web/formateurs.php">Espace formateur</a></li>
             <?php } ?>
             <li><a href="/Auto-eval/web/account.php">Mon compte</a></li>
             <li><a href="/Auto-eval/back/deconnexion_backend.php">Déconnexion</a></li>
@@ -97,10 +75,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
         <div class="display-t">
           <div class="display-tc animate-box" data-animate-effect="fadeIn">
             <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
-            <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
             <p>
               <a class="btn btn-primary btn-lg btn-learn" href="/Auto-eval/forms/sign_in.php">Se connecter</a>
-              <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a>
               </p>
           </div>
         </div>
@@ -108,3 +84,5 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
     </div>
   </div>
 </header>
+
+</html>
