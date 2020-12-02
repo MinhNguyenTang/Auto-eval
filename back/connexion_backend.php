@@ -5,9 +5,9 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 
-$user = new user($_POST);
+$signin = new user($_POST);
 $manager = new manager();
-$result = $manager->connexion($user);
+$result = $manager->connexion($signin);
 if($result)
 {
   session_start();

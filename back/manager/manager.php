@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/formateurs.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/formateur.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/spe.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 
@@ -40,10 +40,10 @@ class manager
   /**
   * Sign in
   */
-  public function connexion(User $user)
+  public function connexion($signin)
   {
     $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
-    $request->execute($this->getmethod($user));
+    $request->execute($this->getmethod($signin));
     $result = $request->fetch();
     if($result)
     {
@@ -69,8 +69,8 @@ class manager
   {
     $request = $this->db_connection()->prepare('SELECT nom, prenom FROM user');
     $request->execute(array(
-      'nom'=>getNom(),
-      'prenom'=>getPrenom()
+      'nom'=>$user->getNom(),
+      'prenom'=>$user->getPrenom()
     ));
     $result = $request->fetch();
     if(!$result)
