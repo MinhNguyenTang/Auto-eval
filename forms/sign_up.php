@@ -18,10 +18,10 @@ include '../include/header.php';
 
       <div class="row form-group">
         <div class="col-md-6">
-          <input type="text" id="fname" class="form-control" placeholder="Nom" required>
+          <input type="text" id="fname" class="form-control" placeholder="Nom" minlength="4" maxlength="12" required>
         </div>
         <div class="col-md-6">
-          <input type="text" id="lname" class="form-control" placeholder="Prénom" required>
+          <input type="text" id="lname" class="form-control" placeholder="Prénom" minlength="4" maxlength="12" required>
         </div>
       </div>
 
@@ -33,7 +33,7 @@ include '../include/header.php';
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="password" id="" class="form-control" placeholder="Mot de passe" required>
+          <input type="password" id="" class="form-control" placeholder="Mot de passe" minlength="4" maxlength="255" required>
         </div>
       </div>
 

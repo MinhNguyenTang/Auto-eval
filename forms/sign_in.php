@@ -33,7 +33,7 @@ include "../include/header.php";
 
       <div class="form-group row">
      <div class="col-md-12">
-         <a href="/Auto-eval/forms/unknown.php">Mot de passe oublié ?</a>
+         <a href="/Auto-eval/forms/mot_de_passe_oublie.php">Mot de passe oublié ?</a>
      </div>
  </div>
 
