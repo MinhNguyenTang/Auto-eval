@@ -45,7 +45,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
             if(empty($_SESSION['user'])) { ?>
             <li class="active"><a href="/Auto-eval/index.php">Accueil</a></li>
             <li class="btn-cta"><a href="/Auto-eval/forms/sign_in.php"><span>Connexion</span></a></li>
-            <li class="btn-cta"><a href="/Auto-eval/forms/sign_up.php"><span>Inscription</span></a></li>
           <?php }
           if(isset($_SESSION['user'])) { ?>
             <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
