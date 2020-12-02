@@ -16,7 +16,7 @@ include "../include/header.php";
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="text" id="email" class="form-control" placeholder="Adresse mail" required>
+          <input type="email" id="email" class="form-control" placeholder="Adresse mail" required>
         </div>
       </div>
 
