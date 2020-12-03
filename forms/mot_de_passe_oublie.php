@@ -1,10 +1,10 @@
-<!Doctype html>
+<!doctype html>
+<html lang="en">
 
 <?php
 include '../include/header.php';
  ?>
 
-<html>
 <body>
 
 <div class="hero" style="background-image: url('/Auto-eval/images/login-background.jpg');">
@@ -21,7 +21,7 @@ include '../include/header.php';
           <h5>
             Veuillez saisir votre adresse e-mail pour réinitialiser votre mot de passe.
           </h5>
-          <input type="email" class="form-control" placeholder="Adresse mail" required>
+          <input type="email" class="form-control" name="mail" placeholder="Adresse mail" required>
         </div>
       </div>
 

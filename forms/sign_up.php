@@ -1,10 +1,10 @@
-<!Doctype html>
+<!doctype html>
+<html lang="en">
 
 <?php
 include '../include/header.php';
  ?>
 
-<html>
 <body>
 
 <div class="hero" style="background-image: url('/Auto-eval/images/login-background.jpg');">
@@ -18,22 +18,22 @@ include '../include/header.php';
 
       <div class="row form-group">
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Nom" minlength="4" maxlength="12" required>
+          <input type="text" class="form-control" name="nom" placeholder="Nom" minlength="4" maxlength="12" required>
         </div>
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Prénom" minlength="4" maxlength="12" required>
+          <input type="text" class="form-control" name="prenom" placeholder="Prénom" minlength="4" maxlength="12" required>
         </div>
       </div>
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="email" class="form-control" placeholder="Adresse mail" required>
+          <input type="email" class="form-control" name="mail" placeholder="Adresse mail" required>
         </div>
       </div>
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="password" class="form-control" placeholder="Mot de passe" minlength="4" maxlength="255" required>
+          <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" minlength="4" maxlength="255" required>
         </div>
       </div>
 

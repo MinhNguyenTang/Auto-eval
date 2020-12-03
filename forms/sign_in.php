@@ -16,13 +16,13 @@ include "../include/header.php";
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="email" class="form-control" placeholder="Adresse mail" required>
+          <input type="email" class="form-control" name="mail" placeholder="Adresse mail" required>
         </div>
       </div>
 
       <div class="row form-group">
         <div class="col-md-12">
-          <input type="password" class="form-control" placeholder="Mot de passe" required>
+          <input type="password" class="form-control" name="mdp" placeholder="Mot de passe" required>
         </div>
       </div>
 
@@ -32,18 +32,18 @@ include "../include/header.php";
       </div>
 
       <div class="form-group row">
-     <div class="col-md-12">
+        <div class="col-md-12">
          <a href="/Auto-eval/forms/mot_de_passe_oublie.php">Mot de passe oublié ?</a>
+       </div>
      </div>
- </div>
 
- <div class="form-group row">
-     <div class="col-md-12">
+     <div class="form-group row">
+       <div class="col-md-12">
          <p><strong>Pas encore inscrit ? </strong><a href="/Auto-eval/forms/sign_up.php">S'inscrire</a></p>
+       </div>
      </div>
+   </form>
  </div>
-    </form>
-  </div>
 </div>
 
 <?php
