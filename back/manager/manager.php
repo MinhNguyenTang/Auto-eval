@@ -68,7 +68,7 @@ class manager
   * @param User $user
   * Sign up
   */
-  public function insert_user(User $user)
+  public function inscription(User $user)
   {
     $request = $this->db_connection()->prepare('SELECT nom, prenom FROM user');
     $request->execute(array(
@@ -103,7 +103,7 @@ class manager
   * @param User $user
   * Update user's account
   */
-  public function modify(User $user)
+  public function modification(User $user)
   {
     $request = $this->db_connection()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
     $request->execute(array(

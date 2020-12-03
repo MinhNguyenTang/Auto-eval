@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 
 $user = new user($_POST)
 $manager = new manager();
-$manager->modify($user);
+$manager->modification($user);
 $result = $manager->get_modification($user);
 if($result)
 {

@@ -5,9 +5,9 @@
 include "../include/header.php";
  ?>
 
-<div class="hero" style="background-image: url('/Auto-eval/images/project-2.jpg');">
+<div class="hero" style="background-image: url('/Auto-eval/images/login-background.jpg');">
   <div class="container" style="padding-top: 150px">
-    <form action="../back/connexion_backend.php" method="post">
+    <form action="../back/connexion_back.php" method="post">
       <div class="form-group">
         <div class="title">
           <h3>Connexion</h3>
