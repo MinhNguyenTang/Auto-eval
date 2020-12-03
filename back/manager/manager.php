@@ -38,6 +38,7 @@ class manager
   }
 
   /**
+  * @param User $signin
   * Sign in
   */
   public function connexion($signin)
@@ -55,14 +56,16 @@ class manager
     }
   }
   /**
+  * @param User $user
   * If forgotten password
   */
   public function new_mdp(User $user)
   {
-    $request = $this->db_conneection()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
+    $request = $this->db_connection()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
     $request->execute($this->getmethod($user));
   }
   /**
+  * @param User $user
   * Sign up
   */
   public function insert_user(User $user)
@@ -97,12 +100,14 @@ class manager
   }
 
   /**
+  * @param User $user
   * Update user's account
   */
   public function modify(User $user)
   {
     $request = $this->db_connection()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
     $request->execute(array(
+      'id'=>$user->getId(),
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom(),
       'mail'=>$user->getMail(),
@@ -131,6 +136,7 @@ class manager
   }
 
   /**
+  * @param User $formateurs
   * Add formateurs
   */
   public function add_formateurs(User $formateurs)
@@ -140,6 +146,7 @@ class manager
   }
 
   /**
+  * @param User $administrateurs
   * Add Administrateurs
   */
   public function add_administrateurs(User $administrateurs)
