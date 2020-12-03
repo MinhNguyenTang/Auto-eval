@@ -21,7 +21,7 @@ include '../include/header.php';
           <h5>
             Veuillez saisir votre adresse e-mail pour réinitialiser votre mot de passe.
           </h5>
-          <input type="email" id="email" class="form-control" placeholder="Adresse mail" required>
+          <input type="email" class="form-control" placeholder="Adresse mail" required>
         </div>
       </div>
 
