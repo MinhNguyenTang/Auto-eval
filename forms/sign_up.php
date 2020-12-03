@@ -7,7 +7,7 @@ include '../include/header.php';
 <html>
 <body>
 
-<div class="hero" style="background-image: url('/Auto-eval/images/img_bg_1.jpg');">
+<div class="hero" style="background-image: url('/Auto-eval/images/project-2.jpg');">
   <div class="container" style="padding-top: 150px">
     <form action="../back/inscription_backend.php" method="post">
       <div class="form-group">
