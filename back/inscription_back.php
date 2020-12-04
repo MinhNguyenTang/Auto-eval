@@ -14,7 +14,7 @@ $manager = new manager();
 if(isset($_POST['nom_spe']))
 {
   $new_user->setRole_user('formateur');
-  $new_medecin->setId_specialite($_POST['nom_spe']);
+  $new_formateur->setId_specialite($_POST['nom_spe']);
   $manager->add_formateurs($new_user,$new_formateur);
   header('Location: ../web/admin.php');
 }
