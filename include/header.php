@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<?php session_start();
+<?php
+session_start();
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 ?>
@@ -65,5 +63,3 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
     </div>
   </div>
 </nav>
-
-</html>
