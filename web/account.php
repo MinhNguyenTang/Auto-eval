@@ -1,3 +1,6 @@
+<!doctype html>
+<html>
+
 <?php
 include "../include/header.php";
 require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/user.php');
@@ -5,8 +8,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/spe.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/user.php');
  ?>
 
-<!doctype html>
-<html>
 <body>
 
   <div class="container">
@@ -37,5 +38,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/user.php');
          </form>
        </td>
      </tbody>
+
+     <?php
+     include "../include/footer.php"; 
+      ?>
+
 </body>
 </html>
