@@ -126,7 +126,7 @@ public function getMdp()
  */
 public function setMdp($mdp)
 {
-    $this->mdp = $mdp;
+    $this->mdp = sha1($mdp);
 }
 
 /**
