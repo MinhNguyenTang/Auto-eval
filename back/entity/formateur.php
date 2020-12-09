@@ -10,6 +10,14 @@ class formateur
   * @var int
   */
   protected $id_user;
+  /**
+  * @var int
+  */
+  protected $id_spe;
+  /**
+  * @var string
+  */
+  protected $telephone;
 
   /**
    * user constructor.
@@ -57,11 +65,43 @@ public function getId_user()
 }
 
 /**
- * @param string $id_user
+ * @param int $id_user
  */
 public function setId_user($id_user)
 {
     $this->id_user = $id_user;
+}
+
+/**
+* @return int
+*/
+public function getId_spe()
+{
+  return $this->id_spe;
+}
+
+/**
+* @param int $id_spe
+*/
+public function setId_spe($id_spe)
+{
+  $this->id_spe = $id_spe;
+}
+
+/**
+* @return string
+*/
+public function getTelephone()
+{
+  return $this->telephone;
+}
+
+/**
+* @param string $telephone
+*/
+public function setTelephone($telephone)
+{
+  $this->telephone = $telephone;
 }
 
 }

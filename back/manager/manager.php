@@ -6,6 +6,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 
 class manager
 {
+  /**
+  * Database connection
+  */
+  public function connexion_bdd()
+  {
+    try
+    {
+      $bdd = new PDO('mysql:host=localhost;dbname=auto_eval;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+      die('Error :' .$e->getMessage());
+    }
+    return $bdd;
+  }
+
   public function getmethod($class)
  {
      $tab = array();
@@ -22,36 +38,24 @@ class manager
  }
 
   /**
-  * Database connection
-  */
-  public function db_connection()
-  {
-    try
-    {
-      $db = new PDO('mysql:host=localhost;dbname=auto_eval;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-      die('Error :' .$e->getMessage());
-    }
-    return $db;
-  }
-
-  /**
   * @param User $signin
   * Sign in
   */
   public function connexion($signin)
   {
-    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
-    $request->execute($this->getmethod($signin));
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
+    $request->execute(array(
+      'mail'=>$signin->getMail(),
+      'mdp'=>$signin->getMdp()
+    ));
     $result = $request->fetch();
     if($result)
     {
       $user = new user($result);
       return $user;
     }
-    else {
+    else
+    {
       return null;
     }
   }
@@ -61,7 +65,7 @@ class manager
   */
   public function new_mdp(User $user)
   {
-    $request = $this->db_connection()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
+    $request = $this->connexion_bdd()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
     $request->execute($this->getmethod($user));
   }
   /**
@@ -70,7 +74,7 @@ class manager
   */
   public function inscription(User $user)
   {
-    $request = $this->db_connection()->prepare('SELECT nom, prenom FROM user');
+    $request = $this->connexion_bdd()->prepare('SELECT nom, prenom FROM user WHERE nom:=nom AND prenom:=prenom');
     $request->execute(array(
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom()
@@ -78,12 +82,14 @@ class manager
     $result = $request->fetch();
     if(!$result)
     {
-      $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, :prenom, :mail, :mdp, :role_user)');
-      $request->execute($this->getmethod($user));
-      return 1;
-    }
-    else {
-      return 0;
+      $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, :prenom, :mail, :mdp, :role_user)');
+      $request->execute(array(
+        'nom'=>$user->getNom(),
+        'prenom'=>$user->getPrenom(),
+        'mail'=>$user->getMail(),
+        'mdp'=>$user->getMdp(),
+        'role_user'=>$user->getRole_user()
+      ));
     }
   }
   /**
@@ -91,21 +97,20 @@ class manager
   */
   public function recovery_data($id)
   {
-    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE id:=id');
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE id:=id');
     $request->execute(array(
       'id' => $id
     ));
     $result = $request->fetch();
     return $result;
   }
-
   /**
   * @param User $user
   * Update user's account
   */
   public function modification(User $user)
   {
-    $request = $this->db_connection()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
+    $request = $this->connexion_bdd()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
     $request->execute(array(
       'id'=>$user->getId(),
       'nom'=>$user->getNom(),
@@ -119,7 +124,7 @@ class manager
   */
   public function get_modification($user)
   {
-    $request = $this->db_connection()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
     $request->execute(array(
       'mail'=>getMail(),
       'mdp'=>getMdp()
@@ -141,7 +146,7 @@ class manager
   */
   public function add_formateurs(User $formateurs)
   {
-    $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
     $request->execute($this->getmethod($formateurs));
   }
 
@@ -151,7 +156,7 @@ class manager
   */
   public function add_administrateurs(User $administrateurs)
   {
-    $request = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
     $request->execute($this->getmethod($administrateurs));
   }
 
@@ -160,7 +165,7 @@ class manager
   */
   public function afficher_formateurs()
   {
-    $request = $this->db_connection()->prepare(
+    $request = $this->connexion_bdd()->prepare(
     'SELECT formateurs.id, user.nom, id_spe, specialites.nom_spe FROM formateurs INNER JOIN specialites ON specialites.id = formateurs.id_spe
     INNER JOIN user ON user.id = formateurs.id_user');
     $request->execute();
