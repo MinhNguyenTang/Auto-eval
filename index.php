@@ -14,7 +14,7 @@ include "include/header.php";
            <div class="display-tc animate-box" data-animate-effect="fadeIn">
              <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
              <p>
-               <a class="btn btn-primary" href="/Auto-eval/forms/sign_in.php">Se connecter</a>
+               <a class="btn btn-primary" href="/Auto-eval/forms/connexion.php">Se connecter</a>
                </p>
            </div>
          </div>

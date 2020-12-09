@@ -27,7 +27,7 @@ include '../include/header.php';
 
       <div class="form-group">
         <input type="submit" value="Valider" class="btn btn-primary">
-        <input type="reset" value="Annuler" class="btn btn-secondary" onclick="location.href='../forms/sign_in.php'">
+        <input type="reset" value="Annuler" class="btn btn-secondary" onclick="location.href='../forms/connexion.php'">
       </div>
     </form>
   </div>
