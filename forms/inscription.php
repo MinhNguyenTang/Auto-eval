@@ -43,7 +43,7 @@ include '../include/header.php';
 
       <div class="form-group row">
           <div class="col-md-12">
-              <p><strong>Déjà inscrit ? </strong><a href="/Auto-eval/forms/sign_in.php">Se connecter</a></p>
+              <p><strong>Déjà inscrit ? </strong><a href="/Auto-eval/forms/connexion.php">Se connecter</a></p>
           </div>
       </div>
     </form>

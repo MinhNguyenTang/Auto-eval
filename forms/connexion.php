@@ -39,7 +39,7 @@ include "../include/header.php";
 
      <div class="form-group row">
        <div class="col-md-12">
-         <p><strong>Pas encore inscrit ? </strong><a href="/Auto-eval/forms/sign_up.php">S'inscrire</a></p>
+         <p><strong>Pas encore inscrit ? </strong><a href="/Auto-eval/forms/inscription.php">S'inscrire</a></p>
        </div>
      </div>
    </form>
