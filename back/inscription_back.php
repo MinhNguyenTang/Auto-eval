@@ -14,23 +14,22 @@ $manager = new manager();
 if(isset($_POST['nom_spe']))
 {
   $new_user->setRole_user('formateur');
-  $new_formateur->setId_specialite($_POST['nom_spe']);
-  $manager->add_formateurs($new_user,$new_formateur);
+  $new_formateur->setId_spe($_POST['nom_spe']);
+  $manager->inscription($new_user,$new_formateur);
   header('Location: ../web/admin.php');
 }
 else
 {
-  var_dump($verif);
   $new_user->setRole_user('user');
-  $verif = $manager->inscription($new_user);
-  if($verif==1)
+  $result = $manager->inscription($new_user);
+  if($result==1)
   {
-    echo $verif;
-    header('Location: ../forms/sign_in.php');
+    header('Location: ../forms/inscription.php');
   }
-  elseif($verif==0) {
-    echo $verif;
-    header('Location: ../forms/sign_up.php');
+  else
+  {
+    header('Location: ../forms/connexion.php');
   }
 }
+
  ?>
