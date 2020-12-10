@@ -83,13 +83,12 @@ class manager
     if(!$result)
     {
       $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, :prenom, :mail, :mdp, :role_user)');
-      $request->execute(array(
-        'nom'=>$user->getNom(),
-        'prenom'=>$user->getPrenom(),
-        'mail'=>$user->getMail(),
-        'mdp'=>$user->getMdp(),
-        'role_user'=>$user->getRole_user()
-      ));
+      $request->execute($this->getmethod($user));
+      return 1;
+    }
+    else
+    {
+      return 0;
     }
   }
   /**
@@ -156,9 +155,29 @@ class manager
   */
   public function add_administrateurs(User $administrateurs)
   {
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND role_user="admin"');
+    $request->execute(array(
+      'mail'=>$administrateurs->getMail()
+    ));
+    $result = $request->fetch();
+    if($result)
+    {
+      return null;
+    }
+    else {
     $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
     $request->execute($this->getmethod($administrateurs));
   }
+}
+
+/**
+* Delete users
+*/
+public function delete()
+{
+  $request = $this->connexion_bdd()->prepare('DELETE FROM user WHERE id:=id');
+  $request->execute();
+}
 
   /**
   * Display formateurs
@@ -183,6 +202,21 @@ class manager
       $i++;
     }
     return $formateurs;
+  }
+
+  /**
+  * Display all interns
+  */
+  public function afficher_stagiaires($stagiaires)
+  {
+    $request = $this->connexion_bdd()->prepare('SELECT nom, prenom, role_user FROM user WHERE role_user="user"');
+    $request->execute(array(
+      'nom'=>$stagiaires->getNom(),
+      'prenom'=>$stagiaires->getPrenom(),
+      'role_user'=>$stagiaires->getRole_user()
+    ));
+    $result = $request->fetchAll();
+    ))
   }
 
 }
