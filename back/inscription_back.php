@@ -22,13 +22,14 @@ else
 {
   $new_user->setRole_user('user');
   $result = $manager->inscription($new_user);
+  var_dump($result);
   if($result==1)
   {
-    header('Location: ../forms/inscription.php');
-  }
-  else
-  {
     header('Location: ../forms/connexion.php');
+  }
+  elseif($result==0)
+  {
+    header('Location: ../forms/inscription.php');
   }
 }
 

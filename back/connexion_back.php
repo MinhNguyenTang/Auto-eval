@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 $signin = new user($_POST);
 $manager = new manager();
 $manager->connexion($signin);
-if($result==true)
+if(!$result)
 {
   header('Location: ../forms/connexion.php');
 }
