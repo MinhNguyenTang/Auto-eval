@@ -11,36 +11,48 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/user.php');
 <body>
 
   <div class="container">
-    <h3>Informations personnelles</h3>
-  </div>
-  <table class="table table-bordered container" style="margin-top: 100px;">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Adresse mail</th>
-        <th></th>
-      </tr>
-    </thead>
+    <div class=" form-group">
+      <div class="title">
+        <h3>Mes informations personnelles</h3>
+      </div>
+    </div>
     <?php
     $manager = new manager();
-    $p_data = $manager->recovery_data(unserialize($_SESSION['user'])->getId());
-    $p_data = unserialize($_SESSION['user']);
-     ?>
-     <tbody>
-       <td><?php echo $p_data->getNom() ?></td>
-       <td><?php echo $p_data->getPrenom() ?></td>
-       <td><?php echo $p_data->getMail() ?></td>
-       <td>
-         <form action="../forms/uptodate.php" method="post">
-           <input type="hidden" value="<?php echo $a->getId() ?>" name="id">
-           <input type="submit" value="Modifier">
-         </form>
-       </td>
-     </tbody>
+    $user = $manager->recovery_data(unserialize($_SESSION['user'])->getId());
+    $user = unserialize($_SESSION['user']);
+    ?>
+    <form action="" method="post">
+      <div class="form-group row">
+        <input type="hidden" value="<?php echo $user->getId();?>">
+      </div>
+
+      <div class="form-group row">
+        <label for="">Nom</label><br>
+        <input type="text" class="form-control" name="nom" value="<?php echo $user->getNom();?>" required>
+      </div>
+
+      <div class="form-group row">
+        <label for="">Prénom</label><br>
+        <input type="text" class="form-control" name="prenom" value="<?php echo $user->getPrenom();?>" required>
+      </div>
+
+      <div class="form-group row">
+        <label for="">Adresse e-mail</label><br>
+        <input type="email" class="form-control" name="mail" value="<?php echo $user->getMail();?>" required>
+      </div>
+
+      <div class="form-group row">
+        <label for="">Mot de passe</label><br>
+        <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" required>
+      </div>
+
+      <div class="form-group row">
+        <input type="submit" class="btn btn-primary" value="Valider">
+      </div>
+    </form>
 
      <?php
-     include "../include/footer.php"; 
+     include "../include/footer.php";
       ?>
 
 </body>
