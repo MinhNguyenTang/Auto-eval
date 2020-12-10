@@ -33,7 +33,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
           <?php
           $manager = new manager();
           if(unserialize($_SESSION['user'])->getRole_user()=="formateur") {
-          $formateurs = $manager->afficher_formateurs();
+            $formateurs = $manager->afficher_formateurs();
            ?>
           <tbody>
             <tr>
@@ -47,6 +47,36 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
           </tbody>
         <?php } ?>
         </table>
+      </div>
+
+      <div class="form-group row">
+        <div class="title">
+          <h4>Stagiaires</h4>
+        </div>
+      </div>
+      <div class="table">
+        <table class="grey black-text">
+          <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Rôles</th>
+            </tr>
+          </thead>
+          <?php
+          $manager = new manager();
+          if(unserialize($_SESSION['user'])->getRole_user()=="user") {
+            $stagiaires = $manager->afficher_stagiaires();
+           ?>
+          <tbody>
+            <?php foreach($stagiaires as $key => $value) {?>
+            <tr>
+              <td><?php echo $value['nom']; ?></td>
+              <td><?php echo $value['prenom']; ?></td>
+              <td><?php echo $value['role_user']; ?></td>
+            </tr>
+          </tbody>
+        </div>
       </div>
     </div>
   </div>
