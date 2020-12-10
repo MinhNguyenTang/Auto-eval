@@ -42,6 +42,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
               <td><?php echo $value['prenom']; ?></td>
               <td><?php echo $value['nom_spe']; ?></td>
               <td><?php echo $value['role_user']; ?></td>
+              <td>
+                <form action="../back/supprimer_back.php" method="post">
+                  <input type="submit" class="btn btn-secondary" value="Supprimer">
+                </form>
+              </td>
               <?php } ?>
             </tr>
           </tbody>
@@ -69,13 +74,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
             $stagiaires = $manager->afficher_stagiaires();
            ?>
           <tbody>
-            <?php foreach($stagiaires as $key => $value) {?>
             <tr>
-              <td><?php echo $value['nom']; ?></td>
-              <td><?php echo $value['prenom']; ?></td>
-              <td><?php echo $value['role_user']; ?></td>
-            </tr>
+              <?php foreach($stagiaires as $key => $value) { ?>
+                <td><?php echo $value['nom']; ?></td>
+                <td><?php echo $value['prenom']; ?></td>
+                <td><?php echo $value['role_user']; ?></td>
+                <td>
+                  <form action="../back/supprimer_back.php" method="post">
+                    <input type="submit" class="btn btn-secondary" value="Supprimer">
+                  </form>
+                </td>
+                <?php } ?>
+              </tr>
           </tbody>
+        <?php } ?>
         </div>
       </div>
     </div>
