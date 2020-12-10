@@ -94,6 +94,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
   </div>
 
   <div class="form-group row">
+    <div class="title">
+      <h4>En bonus</h4>
+    </div>
     <a href="../forms/nouveau_formateur.php" class="btn btn-info">Ajouter un formateur</a>
     <a href="../forms/nouveau_admin.php" class="btn btn-info">Ajouter un administrateur</a>
   </div>
