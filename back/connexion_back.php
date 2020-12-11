@@ -7,14 +7,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 
 $signin = new user($_POST);
 $manager = new manager();
-$manager->connexion($signin);
-if(!$result)
-{
-  header('Location: ../forms/connexion.php');
-}
-else {
-  session_start();
-  $_SESSION['user'] = serialize($result);
-  header('Location: ../index.php');
-}
+$result = $manager->connexion($signin);
+session_start();
+$_SESSION['user'] = serialize($result);
+header('Location: ../index.php');
+
  ?>

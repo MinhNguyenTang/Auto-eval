@@ -216,7 +216,6 @@ public function delete()
       'role_user'=>$stagiaires->getRole_user()
     ));
     $result = $request->fetchAll();
-    ))
   }
 
 }
