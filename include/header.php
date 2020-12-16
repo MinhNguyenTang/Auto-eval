@@ -54,7 +54,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
               <li><a href="/Auto-eval/web/formateurs.php">Espace formateur</a></li>
             <?php } ?>
             <li><a href="/Auto-eval/web/account.php">Mon compte</a></li>
-            <li><a href="/Auto-eval/back/deconnexion_backend.php">Déconnexion</a></li>
+            <li class="btn-cta"><a href="/Auto-eval/back/deconnexion_backend.php">Déconnexion</a></li>
           <?php } ?>
           </ul>
         </div>
