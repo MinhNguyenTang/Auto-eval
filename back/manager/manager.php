@@ -218,9 +218,9 @@ try {
 /**
 * Delete users
 */
-public function delete()
+public function delete(User $user)
 {
-  $request = $this->connexion_bdd()->prepare('DELETE FROM user WHERE id:=id');
+  $request = $this->connexion_bdd()->prepare('DELETE * FROM user WHERE id:=id');
   $request->execute();
 }
 
@@ -261,6 +261,7 @@ public function delete()
       'role_user'=>$stagiaires->getRole_user()
     ));
     $result = $request->fetchAll();
+    return $stagiaires;
   }
 
 }
