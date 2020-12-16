@@ -218,9 +218,9 @@ try {
 /**
 * Delete users
 */
-public function delete(User $user)
+public function delete()
 {
-  $request = $this->connexion_bdd()->prepare('DELETE * FROM user WHERE id:=id');
+  $request = $this->connexion_bdd()->prepare('DELETE FROM user WHERE id:=id');
   $request->execute();
 }
 
