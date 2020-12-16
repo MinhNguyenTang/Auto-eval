@@ -4,16 +4,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/formateur.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/spe.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/vendor/phpmailer/phpmailer/src/Exception.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/vendor/phpmailer/phpmailer/src/PHPMailer.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/vendor/phpmailer/phpmailer/src/SMTP.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/vendor/autoload.php');
+
 class manager
 {
-  use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\Exception;
-
-  require '../vendor/phpmailer/src/Exception.php';
-  require '../vendor/phpmailer/src/PHPMailer.php';
-  require '../vendor/phpmailer/src/SMTP.php';
-  require '../vendor/autoload.php';
-
   /**
   * Database connection
   */
@@ -188,9 +188,14 @@ try {
   * @param User $formateurs
   * Add formateurs
   */
-  public function add_formateurs(User $formateurs)
+  public function add_formateurs(User $user,Formateur $formateurs)
   {
     $request = $this->connexion_bdd()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $request->execute($this->getmethod($formateurs));
+    $request = $this->connexion_bdd()->prepare('SELECT id FROM user WHERE nom:=nom AND prenom:=prenom');
+    $result = $request->fetch();
+    $formateurs->setId_user($result['id']);
+    $request = $this->connexion_bdd()->prepare('INSERT INTO formateurs (id_user, id_spe, telephone) VALUES (:id_user, :id_spe, :telephone)');
     $request->execute($this->getmethod($formateurs));
   }
 
@@ -200,9 +205,10 @@ try {
   */
   public function add_administrateurs(User $administrateurs)
   {
-    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND role_user="admin"');
+    $request = $this->connexion_bdd()->prepare('SELECT nom, prenom FROM user WHERE id:=id AND role_user="admin"');
     $request->execute(array(
-      'mail'=>$administrateurs->getMail()
+      'nom'=>$administrateurs->getNom(),
+      'prenom'=>$administrateurs->getPrenom()
     ));
     $result = $request->fetch();
     if($result)
