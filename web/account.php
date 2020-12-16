@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Hopital/back/entity/user.php');
     $user = $manager->recovery_data(unserialize($_SESSION['user'])->getId());
     $user = unserialize($_SESSION['user']);
     ?>
-    <form action="" method="post">
+    <form action="../back/modification.php" method="post">
       <div class="form-group row">
         <input type="hidden" value="<?php echo $user->getId();?>">
       </div>
