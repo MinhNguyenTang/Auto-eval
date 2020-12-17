@@ -46,7 +46,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
           <?php }
           if(isset($_SESSION['user'])) { ?>
             <li class="active"><a href="/Auto-eval/index.php">Home</a></li>
-            <li><a href="/Auto-eval/forms/contact.php">Contact</a></li>
             <?php if(unserialize($_SESSION['user'])->getRole_user()=="admin") { ?>
               <li><a href="/Auto-eval/web/admin.php">Espace admin</a></li>
             <?php }
