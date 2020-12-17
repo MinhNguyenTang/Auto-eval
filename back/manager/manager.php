@@ -51,38 +51,36 @@ class manager
   */
   public function connexion($signin)
   {
-    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
-    $request->execute(array(
-      'mail'=>$signin->getMail(),
-      'mdp'=>$signin->getMdp()
-    ));
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail=:mail AND mdp=:mdp');
+    $request->execute($this->getmethod($signin));
     $result = $request->fetch();
     if($result)
     {
       $user = new user($result);
       return $user;
     }
-    else
-    {
+    else {
       return null;
     }
   }
+
   /**
   * @param User $user
   * If forgotten password
   */
   public function new_mdp(User $user)
   {
-    $request = $this->connexion_bdd()->prepare('UPDATE user SET mdp:=mdp WHERE mail:=mail');
+    $request = $this->connexion_bdd()->prepare('UPDATE user SET mdp=:mdp WHERE mail=:mail');
     $request->execute($this->getmethod($user));
   }
+
   /**
   * @param User $user
   * Sign up
   */
   public function inscription(User $user)
   {
-    $request = $this->connexion_bdd()->prepare('SELECT nom, prenom FROM user WHERE nom:=nom AND prenom:=prenom');
+    $request = $this->connexion_bdd()->prepare('SELECT nom, prenom FROM user WHERE nom=:nom AND prenom=:prenom');
     $request->execute(array(
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom()
@@ -98,6 +96,7 @@ class manager
     {
       return 0;
     }
+
     // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -136,6 +135,7 @@ try {
     echo "Le message n'a pu être envoyé. Mailer Error: {$mail->ErrorInfo}";
 }
   }
+
   /**
   *
   */
@@ -148,6 +148,7 @@ try {
     $result = $request->fetch();
     return $result;
   }
+
   /**
   * @param User $user
   * Update user's account
@@ -163,6 +164,7 @@ try {
       'mdp'=>$user->getMdp()
     ));
   }
+
   /**
   * Updated account visibility
   */
