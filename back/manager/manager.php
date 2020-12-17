@@ -205,7 +205,7 @@ try {
   * @param User $administrateurs
   * Add Administrateurs
   */
-  public function add_administrateurs(User $administrateurs)
+  public function ajouter_administrateurs(User $administrateurs)
   {
     $req = $this->db_connection()->prepare('SELECT nom, prenom FROM user WHERE id:=id AND role_user="admin"');
     $req->execute(array(
