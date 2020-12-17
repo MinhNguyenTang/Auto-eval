@@ -3,8 +3,6 @@
 
 <?php
 include "../include/header.php";
-require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
  ?>
 
 <body>
@@ -20,32 +18,42 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/user.php');
     </div>
       <?php
       $manager = new manager();
-      $user = $manager->recovery_data(unserialize($_SESSION['user'])->getId());
+      $user = $manager->recuperation_data(unserialize($_SESSION['user'])->getId());
       $user = unserialize($_SESSION['user']);
       ?>
-      <form action="../back/modification.php" method="post">
+      <form action="../back/modification_back.php" method="post">
         <div class="form-group row">
-          <input type="hidden" value="<?php echo $user->getId();?>">
+          <div class="col-md-6">
+            <input type="hidden" name="id" value="<?php echo $user->getId();?>">
+          </div>
         </div>
 
         <div class="form-group row">
           <label for="">Nom</label><br>
-          <input type="text" class="form-control" name="nom" value="<?php echo $user->getNom();?>" required>
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="nom" value="<?php echo $user->getNom();?>" required>
+          </div>
         </div>
 
         <div class="form-group row">
           <label for="">Prénom</label><br>
-          <input type="text" class="form-control" name="prenom" value="<?php echo $user->getPrenom();?>" required>
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="prenom" value="<?php echo $user->getPrenom();?>" required>
+          </div>
         </div>
 
         <div class="form-group row">
           <label for="">Adresse e-mail</label><br>
-          <input type="email" class="form-control" name="mail" value="<?php echo $user->getMail();?>" required>
+          <div class="col-md-6">
+            <input type="email" class="form-control" name="mail" value="<?php echo $user->getMail();?>" required>
         </div>
+      </div>
 
         <div class="form-group row">
           <label for="">Mot de passe</label><br>
-          <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" required>
+          <div class="col-md-6">
+            <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" required>
+          </div>
         </div>
 
         <div class="form-group row">
