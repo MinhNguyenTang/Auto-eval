@@ -155,7 +155,7 @@ try {
   */
   public function modification(User $user)
   {
-    $request = $this->connexion_bdd()->prepare('UPDATE user SET nom:=nom, prenom:=prenom, mail=:mail, mdp:=mdp WHERE id:=id');
+    $request = $this->connexion_bdd()->prepare('UPDATE user SET nom=:nom, prenom=:prenom, mail=:mail, mdp=:mdp WHERE id=:id');
     $request->execute(array(
       'id'=>$user->getId(),
       'nom'=>$user->getNom(),
@@ -170,7 +170,7 @@ try {
   */
   public function get_modification($user)
   {
-    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail:=mail AND mdp:=mdp');
+    $request = $this->connexion_bdd()->prepare('SELECT * FROM user WHERE mail=:mail AND mdp=:mdp');
     $request->execute(array(
       'mail'=>getMail(),
       'mdp'=>getMdp()
