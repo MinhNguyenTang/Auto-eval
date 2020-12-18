@@ -9,13 +9,7 @@ include "../include/header.php";
 
 <div class="hero" style="background-image: url('/Auto-eval/images/login-background.jpg');">
   <div class="container" style="padding-top: 150px">
-    <div class="container">
-      <div class=" form-group">
-        <div class="title">
-          <h3>Mes informations personnelles</h3>
-        </div>
-      </div>
-    </div>
+    <div style="background-color: rgba(208, 211, 212); width: 700px;padding: 10px;border-radius: 10px">
       <?php
       $manager = new manager();
       $user = $manager->recuperation_data(unserialize($_SESSION['user'])->getId());
@@ -23,36 +17,46 @@ include "../include/header.php";
       ?>
       <form action="../back/modification_back.php" method="post">
         <div class="form-group row">
-          <div class="col-md-6">
-            <input type="hidden" name="id" value="<?php echo $user->getId();?>">
+          <div class="container">
+            <div class=" form-group">
+              <div class="title">
+                <h3>Mes informations personnelles</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12">
+              <input type="hidden" name="id" value="<?php echo $user->getId();?>">
+            </div>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="">Nom</label><br>
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="nom" value="<?php echo $user->getNom();?>" required>
+          <div class="col-md-12">
+            <label for="">Nom</label>
+            <input type="text" class="form-control" name="nom" value="<?php echo $user->getNom();?>" minlength="4" maxlength="255" required>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="">Prénom</label><br>
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="prenom" value="<?php echo $user->getPrenom();?>" required>
+          <div class="col-md-12">
+            <label for="">Prénom</label>
+            <input type="text" class="form-control" name="prenom" value="<?php echo $user->getPrenom();?>" minlength="4" maxlength="255" required>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="">Adresse e-mail</label><br>
-          <div class="col-md-6">
-            <input type="email" class="form-control" name="mail" value="<?php echo $user->getMail();?>" required>
+          <div class="col-md-12">
+            <label for="">Adresse e-mail</label>
+            <input type="email" class="form-control" name="mail" value="<?php echo $user->getMail();?>" minlength="4" maxlength="255" required>
         </div>
       </div>
 
         <div class="form-group row">
-          <label for="">Mot de passe</label><br>
-          <div class="col-md-6">
-            <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" required>
+          <div class="col-md-12">
+            <label for="">Mot de passe</label>
+            <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" minlength="4" maxlength="255" required>
           </div>
         </div>
 
@@ -62,6 +66,7 @@ include "../include/header.php";
       </form>
     </div>
   </div>
+</div>
 
      <?php
      include "../include/footer.php";
