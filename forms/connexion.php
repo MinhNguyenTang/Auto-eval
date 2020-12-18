@@ -44,6 +44,7 @@ include "../include/header.php";
         <div class="form-group">
           <input type="submit" value="Valider" class="btn btn-primary">
         </div>
+        
      </form>
     </div>
  </div>
