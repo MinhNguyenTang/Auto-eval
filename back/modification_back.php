@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
 $user = new user($_POST);
 $manager = new manager();
 $manager->modification($user);
-$res = $manager->get_modification($user);
+$res = $manager->voir_modification($user);
 if($res)
 {
   header('Location: ../web/account.php');

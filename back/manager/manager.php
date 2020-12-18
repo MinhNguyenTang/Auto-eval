@@ -168,7 +168,7 @@ try {
   /**
   * Updated account visibility
   */
-  public function get_modification($user)
+  public function voir_modification($user)
   {
     $req = $this->db_connection()->prepare('SELECT * FROM user WHERE mail=:mail AND mdp=:mdp');
     $req->execute(array(
