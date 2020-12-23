@@ -42,16 +42,17 @@ include '../include/header.php';
         </div>
       </div>
 
-      <div class="form-group row">
+      <div class="row form-group">
+        <div class="col-md-12">
+          <input type="submit" value="Valider" class="btn btn-primary">
+        </div>
+      </div>
+
+      <div class="row form-group">
           <div class="col-md-12">
               <p><strong>Déjà inscrit ? </strong><a href="/Auto-eval/forms/connexion.php">Se connecter</a></p>
           </div>
       </div>
-
-      <div class="form-group">
-        <input type="submit" value="Valider" class="btn btn-primary">
-      </div>
-
     </form>
   </div>
 </div>

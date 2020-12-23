@@ -24,21 +24,29 @@ include "../include/header.php";
 
         <div class="row form-group">
           <div class="col-md-12">
-            <label for="">Retaper votre mot de passe</label>
+            <label for="">Nouveau mot de passe</label>
               <input type="password" class="form-control" name="mdp" required>
           </div>
         </div>
 
         <div class="row form-group">
           <div class="col-md-12">
-            <label for="">Confirmer votre mot de passe</label>
+            <label for="">Confirmation du mot de passe</label>
               <input type="password" class="form-control" name="mdp" required>
           </div>
         </div>
 
-        <div class="form-group">
-          <input type="submit" value="Modifier le mot de passe" class="btn btn-primary">
-          <input type="reset" value="Annuler" class="btn btn-secondary" onclick="location.href='../web/account.php'">
+        <div class="row form-group">
+          <div class="col-md-12">
+            <input type="submit" value="Modifier le mot de passe" class="btn btn-primary">
+            <input type="reset" value="Annuler" class="btn btn-secondary" onclick="location.href='../web/account.php'">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <div class="col-md-12">
+            <strong><a href="">Mot de passe oublié ?</a></strong>
+          </div>
         </div>
 
      </form>

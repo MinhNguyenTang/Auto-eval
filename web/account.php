@@ -53,15 +53,15 @@ include "../include/header.php";
         </div>
       </div>
 
-      <div class="form-group row">
-        <div class="col-md-12">
-          <strong><a href="/Auto-eval/forms/nouveau_mdp.php">Changer de mot de passe ?</a></strong>
-        </div>
-      </div>
-
         <div class="form-group row">
           <div class="col-md-12">
             <input type="submit" class="btn btn-primary" value="Valider">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-12">
+            <strong><a href="/Auto-eval/forms/nouveau_mdp.php">Changer de mot de passe ?</a></strong>
           </div>
         </div>
 
