@@ -53,17 +53,18 @@ include "../include/header.php";
         </div>
       </div>
 
+      <div class="form-group row">
+        <div class="col-md-12">
+          <strong><a href="/Auto-eval/forms/nouveau_mdp.php">Changer de mot de passe ?</a></strong>
+        </div>
+      </div>
+
         <div class="form-group row">
           <div class="col-md-12">
-            <label for="">Mot de passe</label>
-            <input type="password" class="form-control" name="mdp" value="<?php echo $user->getMdp();?>" minlength="4" maxlength="255" required>
+            <input type="submit" class="btn btn-primary" value="Valider">
           </div>
         </div>
 
-        <div class="form-group row">
-          <input type="submit" class="btn btn-primary" value="Valider">
-        </div>
-        
       </form>
     </div>
   </div>
