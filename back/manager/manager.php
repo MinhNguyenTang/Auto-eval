@@ -155,13 +155,12 @@ try {
   */
   public function modification(User $user)
   {
-    $req = $this->db_connection()->prepare('UPDATE user SET nom=:nom, prenom=:prenom, mail=:mail, mdp=:mdp WHERE id=:id');
+    $req = $this->db_connection()->prepare('UPDATE user SET nom=:nom, prenom=:prenom, mail=:mail WHERE id=:id');
     $req->execute(array(
       'id'=>$user->getId(),
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom(),
-      'mail'=>$user->getMail(),
-      'mdp'=>$user->getMdp()
+      'mail'=>$user->getMail()
     ));
   }
 
@@ -184,6 +183,17 @@ try {
     else {
       return null;
     }
+  }
+  
+  /**
+  * @param User $user
+  */
+  public function modifier_mdp(User $user)
+  {
+    $req = $this->db_connection()->prepare('UPDATE user SET mdp=:mdp WHERE mail=:mail');
+    $req->execute(array(
+      'mail'=>$user->getMail()
+    ));
   }
 
   /**
@@ -270,6 +280,14 @@ public function delete()
     ));
     $result = $req->fetchAll();
     return $stagiaires;
+  }
+
+  public function specialites()
+  {
+    $req = $this->db_connection()->prepare('SELECT * FROM specialites');
+    $req->execute();
+    $result = $req->fetchAll();
+    return $result;
   }
 
 }
