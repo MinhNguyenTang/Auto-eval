@@ -157,7 +157,6 @@ try {
   {
     $req = $this->db_connection()->prepare('UPDATE user SET nom=:nom, prenom=:prenom, mail=:mail WHERE id=:id');
     $req->execute(array(
-      'id'=>$user->getId(),
       'nom'=>$user->getNom(),
       'prenom'=>$user->getPrenom(),
       'mail'=>$user->getMail()
@@ -184,7 +183,7 @@ try {
       return null;
     }
   }
-  
+
   /**
   * @param User $user
   */
@@ -228,7 +227,7 @@ try {
       return null;
     }
     else {
-    $req = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, prenom, mail, mdp, role_user)');
+    $req = $this->db_connection()->prepare('INSERT INTO user (nom, prenom, mail, mdp, role_user) VALUES (:nom, :prenom, :mail, :mdp, :role_user)');
     $req->execute($this->getmethod($administrateurs));
   }
 }
