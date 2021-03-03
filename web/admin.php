@@ -8,20 +8,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/entity/spe.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
  ?>
 
-<body>
+<body style="background-image: url('/Auto-eval/images/login-background.jpg');background-repeat: no-repeat">
 
   <div class="container">
-    <div class=" form-group">
+    <div class="row form-group">
       <div class="title">
         <h3>Tableau de bord</h3>
       </div>
     </div>
-    <div class=" form-group">
+    <div class="row form-group">
       <div class="title">
         <h4>Formateurs<h4>
       </div>
-      <div class="table">
-        <table class="black white-text">
+
+        <table class="table table-bordered container" style="margin-top: 100px;background-color: rgba(170, 170, 170, 0.95)">
           <thead>
             <tr>
               <th scope="col">Nom</th>
@@ -52,15 +52,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
           </tbody>
         <?php } ?>
         </table>
-      </div>
 
       <div class="form-group row">
         <div class="title">
           <h4>Stagiaires</h4>
         </div>
       </div>
-      <div class="table">
-        <table class="grey black-text">
+
+        <table class="table table-bordered container" style="margin-top: 100px;background-color: rgba(170, 170, 170, 0.95)">
           <thead>
             <tr>
               <th scope="col">Nom</th>
@@ -88,10 +87,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/Auto-eval/back/manager/manager.php');
               </tr>
           </tbody>
         <?php } ?>
-        </div>
-      </div>
+      </table>
     </div>
   </div>
+
 
   <div class="form-group row">
     <div class="txt">
